@@ -22,10 +22,14 @@ def calc(a, b, operation = 'multiply'):
                 return a ** b
             case 'modulo':
                 return a % b
+            case _:
+              return "No operation match, please use: multiply, divide, int_divide, add, subtract, power, or modulo."
     except ZeroDivisionError:
         return "You can't divide by 0!"
     except TypeError:
         return "You can't multiply those values!"
+    
+print(calc(5,7, 'powerrrr'))    
     
 def data_type_conversion(value, data_type):
     try:
@@ -77,8 +81,8 @@ def student_scores(param, **kwargs):
         total = sum(kwargs.values())
         return total / len(kwargs)
 
-#print(student_scores("mean", Tom=75, Dick=89, Angela=91))
-#print(student_scores("best", Tom=75, Dick=89, Angela=91, Frank=50))
+print(student_scores("mean", Tom=75, Dick=89, Angela=91))
+print(student_scores("best", Tom=75, Dick=89, Angela=91, Frank=50))
 
 
 def titleize(a):
@@ -92,8 +96,6 @@ def titleize(a):
         word = word.capitalize()
       titleString = titleString + ' ' + word
     return titleString.strip()
-
-#print(titleize("war and peace"))
     
 
 def hangman(secret, guess):
@@ -108,18 +110,6 @@ def hangman(secret, guess):
   return hidenString
 
 #print(hangman("difficulty","ic"))
- 
-   
-
-#def pig_latin(engStr):
-  volves = ['a', 'e', 'i', 'o', 'u' ]
-  
-  words = []
-  pigLatinStr = ''
-
-  if len(engStr.split()) >= 1:
-    for word in engStr.split():
-      words.append(word)
 
   for word in words:
    pigLatin = word
@@ -134,93 +124,3 @@ def hangman(secret, guess):
    if pigLatin[0] in volves:
      pigLatinStr += pigLatin + 'ay' + ' '
     
- 
-   if pigLatin[0] not in volves:
-     for _ in pigLatin:
-       if _ in volves:
-         break
-       else:
-         pigLatin = pigLatin.replace(_, '', 1)
-         pigLatin += _
-  
-     pigLatinStr += pigLatin + 'ay' + ' '
-
-  return pigLatinStr.strip()
-
-
-def pig_latin(engStr):
-  volves = ['a', 'e', 'i', 'o', 'u' ]
-  
-  words = []
-  pigLatinStr = ''
-
-  if len(engStr.split()) >= 1:
-    for word in engStr.split():
-      words.append(word)
-
-  for word in words:
-   pigLatin = word
- 
-   if 'qu' in pigLatin:
-    if pigLatin.startswith('qu'):
-      pigLatin = pigLatin[2:] + "qu"
-      #print('starts with qu: ', pigLatin)
-    else:
-      qu_index = pigLatin.find('qu')
-      pigLatin = pigLatin[qu_index + 2:] + pigLatin[:qu_index + 2]
-
-     #pigLatin = pigLatin.replace('qu','',1)
-     #print(pigLatin)
-     #pigLatin += 'qu'
-     #print(pigLatin)
- 
- 
-   if pigLatin[0] in volves:
-     pigLatinStr += pigLatin + 'ay' + ' '
-    
- 
-   if pigLatin[0] not in volves:
-     for _ in pigLatin:
-       if _ in volves:
-         break
-       else:
-         pigLatin = pigLatin.replace(_, '', 1)
-         pigLatin += _
-  
-     pigLatinStr += pigLatin + 'ay' + ' '
-
-  return pigLatinStr.strip()
-
-
-#def pig_latin(engStr):
-  volves = ['a', 'e', 'i', 'o', 'u' ]
-  
-  words = engStr.split()
-  pigLatinStr = []
-
-
-  for word in words:
-   pigLatin = word
-   
-   if pigLatin[0] in volves:
-     pigLatin += 'ay'
-
-   else:
-     if pigLatin.startswith('qu'):
-       pigLatinStr.append(pigLatin[2:] + "quay")
-     else:
-      for i in range(len(word)):
-                    if word[i] in volves:
-                        pigLatinStr.append(word[i:] + word[:i] + "ay")
-                        break
-   
-
-
-   return " ".join(pigLatinStr)
-
-print(pig_latin("apple"))
-print(pig_latin("banana"))
-print(pig_latin("cherry"))
-print(pig_latin("quiet"))
-print(pig_latin("square"))
-print(pig_latin("the quick brown fox"))
