@@ -1,0 +1,7 @@
+First used select element manually in Chrome Dev Inspector
+and was able to identify that each of the Top 10 Elements
+is located under Unordered Lis (UL) and then in list <li> 
+with link with <a href> and Title under <strong> element
+
+Construct XPATH actully was not that hard "//ul/li/a[strong]"
+(similary to as absolute path in Linux)
