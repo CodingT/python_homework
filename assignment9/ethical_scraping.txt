@@ -1,0 +1,14 @@
+
+1. Which sections of the website are restricted for crawling?
+Sections with paths starting with /wiki/, /w/, /api/, and special administrative pages like
+ /wiki/Wikipedia:Articles_for_deletion/, /wiki/Wikipedia:Sockpuppet_investigations, 
+ and language-specific special pages (e.g., /wiki/%D8%AE%D8%A7%D8%B5:Search for Arabic) are restricted.
+
+2. Are there specific rules for certain user agents?
+Yes, the file has specific rules for many user agents, including MJ12bot, Mediapartners-Google*,
+ UbiCrawler, HTTrack, wget, and libwww. Some are fully blocked, while others have limited access.
+
+3. Why do websites use robots.txt?
+Websites use robots.txt to control which parts of their site can be accessed by automated bots.
+ It helps reduce server load, protect sensitive information, and prevent content duplication in search engines.
+  It also promotes ethical scraping by encouraging respectful crawling behavior.
