@@ -10,6 +10,7 @@ countries = df["country"].drop_duplicates()
 
 # Initialize Dash app
 app = Dash(__name__)
+server = app.server
 
 # Layout
 app.layout = html.Div(
@@ -39,4 +40,3 @@ def update_graph(selected_country):
 
 if __name__ == "__main__":
     app.run(debug=True)
-    server = app.server
