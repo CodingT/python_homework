@@ -1,0 +1,36 @@
+
+function: print_hw
+positional parameters: none
+keyword parameters: none
+return: None
+
+
+function: return_true
+positional parameters: none
+keyword parameters: none
+return: True
+
+
+function: return_true
+positional parameters: (1,)
+keyword parameters: none
+return: True
+
+
+function: return_true
+positional parameters: (1, 2, 3)
+keyword parameters: none
+return: True
+
+
+function: return_decorator
+positional parameters: none
+keyword parameters: {'a': 1, 'b': 2}
+return: <function logger_decorator at 0x7f0ea04827a0>
+
+
+function: return_decorator
+positional parameters: (5,)
+keyword parameters: none
+return: 10
+
